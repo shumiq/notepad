@@ -11,6 +11,8 @@ import { Toolbar } from "./components/Toolbar";
 import { Editor } from "./components/Editor";
 import { useFileHandlers } from "./hooks/useFileHandlers";
 
+import { Footer } from "./components/Footer";
+
 function App() {
   const [note, { refetch }] = createResource(getNote);
   const [content, setContent] = createSignal("");
@@ -67,6 +69,7 @@ function App() {
           onDownload={saveHandler}
         />
         <Editor content={content} onContentInput={handleContentInput} />
+        <Footer />
       </Suspense>
     </div>
   );

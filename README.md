@@ -1,11 +1,16 @@
 # 📝 Notepad
 
-A minimalist, high-performance web-based notepad application built with **Solid JS**, **Vite**, and **Tailwind CSS 4**. Designed for speed, privacy, and ease of use.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+A minimalist, high-performance **Open Source** web-based notepad application built with **Solid JS**, **Vite**, and **Tailwind CSS 4**. Designed for speed, privacy, and ease of use.
 
 🔗 **Live Demo**: [notepad-simple.vercel.app](https://notepad-simple.vercel.app)
+💻 **Source Code**: [github.com/shumiq/notepad](https://github.com/shumiq/notepad)
 
 ## ✨ Features
 
+- **Open Source**: Free to use, modify, and distribute.
 - **Offline-First**: Powered by Service Workers (Vite PWA) for reliable offline access.
 - **Persistent Storage**: Uses **Dexie.js** (IndexedDB) to save your notes locally in your browser—no login required.
 - **Line Numbering**: Built-in line numbers for better code and text editing experience.
@@ -36,7 +41,7 @@ A minimalist, high-performance web-based notepad application built with **Solid 
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/shumiq/notepad.git
 
 # Install dependencies
 bun install
@@ -75,3 +80,7 @@ This project is configured for deployment on **Vercel**.
 ```bash
 bun deploy:vercel
 ```
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
