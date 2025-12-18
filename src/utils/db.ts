@@ -1,5 +1,3 @@
-import { createResource } from "solid-js";
-
 import { Dexie, type Table } from "dexie";
 
 const db = new Dexie("notepad");
@@ -13,10 +11,20 @@ const noteTable = db?.notes as Table<{
   content: string;
 }>;
 
-export const [getNote] = createResource(async () => {
-  return (await noteTable?.toArray())?.[0]?.content || "";
-});
+export async function getNote() {
+  const note = (await noteTable?.toArray())?.[0];
+  return {
+    title: note?.title || "untitled.txt",
+    content: note?.content || "",
+  };
+}
 
-export async function setNote(content: string) {
-  await noteTable.put({ id: 0, title: "default", content });
+export async function setNote({
+  title = "untitled.txt",
+  content = "",
+}: {
+  title: string;
+  content: string;
+}) {
+  await noteTable.put({ id: 0, title, content });
 }
