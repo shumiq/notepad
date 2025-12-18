@@ -2,6 +2,8 @@
 
 A minimalist, high-performance web-based notepad application built with **Solid JS**, **Vite**, and **Tailwind CSS 4**. Designed for speed, privacy, and ease of use.
 
+🔗 **Live Demo**: [notepad-simple.vercel.app](https://notepad-simple.vercel.app)
+
 ## ✨ Features
 
 - **Offline-First**: Powered by Service Workers (Vite PWA) for reliable offline access.
