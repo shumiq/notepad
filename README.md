@@ -1,5 +1,6 @@
 # 📝 Notepad
 
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/notepad-simple)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
@@ -80,6 +81,10 @@ This project is configured for deployment on **Vercel**.
 ```bash
 bun deploy:vercel
 ```
+
+## 🤖 AI Assistance
+
+This project was developed with the assistance of AI agents. The source code is partially generated and refined using AI tools to improve efficiency and maintain high-quality code standards.
 
 ## 📄 License
 
