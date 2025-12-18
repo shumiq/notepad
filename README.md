@@ -8,9 +8,18 @@ A minimalist, high-performance web-based notepad application built with **Solid 
 
 - **Offline-First**: Powered by Service Workers (Vite PWA) for reliable offline access.
 - **Persistent Storage**: Uses **Dexie.js** (IndexedDB) to save your notes locally in your browser—no login required.
+- **Line Numbering**: Built-in line numbers for better code and text editing experience.
 - **Modern UI**: Styled with **Tailwind CSS 4** and **DaisyUI 5** for a sleek, responsive, and customizable interface.
 - **Theme Support**: Includes light and dark mode switching (DaisyUI themes).
+- **Native File Access**: Uses the **File System Access API** to open and save files directly from/to your device.
 - **PWA Ready**: Installable on mobile and desktop as a standalone application.
+
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action        |
+| -------- | ------------- |
+| `Ctrl+S` | Download Note |
+| `Ctrl+O` | Open File     |
 
 ## 🚀 Tech Stack
 
