@@ -1,16 +1,36 @@
-import { createEffect, createResource, Suspense } from "solid-js";
+import {
+  createEffect,
+  createResource,
+  createSignal,
+  on,
+  Suspense,
+} from "solid-js";
 import { getTheme, ThemeController } from "./components/ThemeController";
 import { getNote, setNote } from "./utils/db";
 
 function App() {
+  let lineNumbersRef: HTMLDivElement | undefined;
+  let textareaRef: HTMLTextAreaElement | undefined;
+
   const [note, { refetch }] = createResource(getNote);
+  const [content, setContent] = createSignal("");
+  const [title, setTitle] = createSignal("");
+
+  createEffect(
+    on(note, (n) => {
+      if (n) {
+        setContent(n.content);
+        setTitle(n.title);
+      }
+    }),
+  );
   const saveHandler = async () => {
     const fileName = window.prompt(
       "Enter file name",
-      note()?.title ?? "untitled.txt",
+      title() || "untitled.txt",
     );
     if (!fileName) return;
-    const file = new Blob([note()?.content ?? ""], {
+    const file = new Blob([content()], {
       type: "text/plain",
     });
     const url = URL.createObjectURL(file);
@@ -73,15 +93,17 @@ function App() {
           </div>
         }
       >
-        <div class="flex w-full items-center gap-1 overflow-y-hidden p-1">
+        <div class="bg-base-300 flex w-full items-center gap-1 overflow-y-hidden p-1">
           <input
             type="text"
             class="input input-bordered input-xs w-[100px]"
-            value={note()?.title ?? "untitled.txt"}
+            value={title()}
             onInput={async (e) => {
+              const val = e.currentTarget.value;
+              setTitle(val);
               await setNote({
-                title: e.currentTarget.value,
-                content: note()?.content ?? "",
+                title: val,
+                content: content(),
               });
             }}
             onBlur={() => {
@@ -98,18 +120,40 @@ function App() {
             <ThemeController />
           </div>
         </div>
-        <div class="flex-1 overflow-x-hidden overflow-y-hidden">
-          <textarea
-            class="m-0 h-full w-full resize-none border-none bg-transparent p-2 focus:outline-none"
-            autofocus
-            value={note()?.content ?? ""}
-            onInput={async (e) => {
-              await setNote({
-                title: note()?.title ?? "untitled.txt",
-                content: e.currentTarget.value,
-              });
-            }}
-          ></textarea>
+        <div class="flex-1 overflow-hidden">
+          <div class="flex h-full w-full">
+            <div
+              ref={(el) => (lineNumbersRef = el)}
+              class="bg-base-200 text-base-content/40 w-10 overflow-hidden py-2 text-right font-mono text-[13px] select-none"
+            >
+              <div class="flex flex-col pr-2">
+                {Array.from({
+                  length: content().split("\n").length,
+                }).map((_, i) => (
+                  <div class="h-[1.5rem] leading-[1.5rem]">{i + 1}</div>
+                ))}
+              </div>
+            </div>
+            <textarea
+              ref={(el) => (textareaRef = el)}
+              class="m-0 h-full flex-1 resize-none overflow-x-auto border-none bg-transparent p-2 font-mono text-[13px] leading-[1.5rem] whitespace-pre focus:outline-none"
+              autofocus
+              value={content()}
+              onScroll={() => {
+                if (lineNumbersRef && textareaRef) {
+                  lineNumbersRef.scrollTop = textareaRef.scrollTop;
+                }
+              }}
+              onInput={async (e) => {
+                const val = e.currentTarget.value;
+                setContent(val);
+                await setNote({
+                  title: title(),
+                  content: val,
+                });
+              }}
+            ></textarea>
+          </div>
         </div>
       </Suspense>
     </div>
