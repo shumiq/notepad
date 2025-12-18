@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "start": "cd dist && bun index.html",
+    "build:solid": "tsc -b && vite build",
+    "deploy:vercel": "vercel --prod",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "lint": "eslint",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "dexie": "^4.2.1",
     "solid-js": "^1.9.10"
   },
   "devDependencies": {
@@ -49,7 +50,9 @@
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.50.0",
+    "vercel": "^50.1.2",
     "vite": "^7.3.0",
+    "vite-plugin-pwa": "^1.2.0",
     "vite-plugin-solid": "^2.11.10"
   }
 }
