@@ -1,5 +1,5 @@
 import { createEffect, createResource, Suspense } from "solid-js";
-import { getTheme } from "./components/ThemeController";
+import { getTheme, ThemeController } from "./components/ThemeController";
 import { getNote, setNote } from "./utils/db";
 
 function App() {
@@ -88,12 +88,15 @@ function App() {
               refetch();
             }}
           />
-          <button class="btn btn-light btn-xs" onclick={openHandler}>
+          <button class="btn btn-xs" onclick={openHandler}>
             Open
           </button>
-          <button class="btn btn-light btn-xs" onclick={saveHandler}>
+          <button class="btn btn-xs" onclick={saveHandler}>
             Download
           </button>
+          <div class="ml-auto">
+            <ThemeController />
+          </div>
         </div>
         <div class="flex-1 overflow-x-hidden overflow-y-hidden">
           <textarea
