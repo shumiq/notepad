@@ -1,4 +1,5 @@
 import type { Accessor } from "solid-js";
+import { Icon } from "./Icon";
 import { ThemeController } from "./ThemeController";
 
 interface ToolbarProps {
@@ -14,7 +15,7 @@ export function Toolbar(props: ToolbarProps) {
     <div class="bg-base-300 flex w-full items-center gap-1 overflow-y-hidden p-1">
       <input
         type="text"
-        class="input input-bordered input-xs w-[100px]"
+        class="input input-bordered input-md w-[100px]"
         value={props.title()}
         onInput={async (e) => {
           props.onTitleInput(e.currentTarget.value);
@@ -23,11 +24,11 @@ export function Toolbar(props: ToolbarProps) {
           props.onRefresh();
         }}
       />
-      <button class="btn btn-xs" onclick={props.onOpen}>
-        Open
+      <button class="btn btn-md btn-square" onclick={props.onOpen}>
+        <Icon name="folder_open" />
       </button>
-      <button class="btn btn-xs" onclick={props.onDownload}>
-        Download
+      <button class="btn btn-md btn-square" onclick={props.onDownload}>
+        <Icon name="download" />
       </button>
       <div class="ml-auto">
         <ThemeController />

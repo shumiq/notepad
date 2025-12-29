@@ -1,4 +1,5 @@
-import { createSignal } from "solid-js";
+import { createEffect, createSignal, Show } from "solid-js";
+import { Icon } from "./Icon";
 
 const [theme, setTheme] = createSignal();
 
@@ -6,18 +7,28 @@ export const getTheme = () =>
   theme() || localStorage.getItem("theme") || "light";
 
 export function ThemeController() {
+  createEffect(() => {
+    setTheme(getTheme());
+  });
   return (
-    <select
-      value={getTheme() as string}
-      onChange={(e) => {
-        setTheme(e.currentTarget.value);
-        localStorage.setItem("theme", e.currentTarget.value);
+    <button
+      class="btn btn-md btn-square"
+      onclick={() => {
+        if (theme() !== "light") {
+          setTheme("light");
+          localStorage.setItem("theme", "light");
+        } else {
+          setTheme("dark");
+          localStorage.setItem("theme", "dark");
+        }
       }}
-      class="select select-xs"
     >
-      <option disabled={true}>Select theme</option>
-      <option>light</option>
-      <option>dark</option>
-    </select>
+      <Show when={theme() === "light"}>
+        <Icon name="light_mode" />
+      </Show>
+      <Show when={theme() === "dark"}>
+        <Icon name="dark_mode" />
+      </Show>
+    </button>
   );
 }
