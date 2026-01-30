@@ -19,13 +19,18 @@ A minimalist, high-performance **Open Source** web-based notepad application bui
 - **Theme Support**: Includes light and dark mode switching (DaisyUI themes).
 - **Native File Access**: Uses the **File System Access API** to open and save files directly from/to your device.
 - **PWA Ready**: Installable on mobile and desktop as a standalone application.
+- **Text Operations**: Quick toolbar buttons for Select All, Clear, Copy, and Paste operations.
+- **AI-Powered**: Integrated AI assistant to help refine, rewrite, or generate text directly within the editor.
 
 ## ⌨️ Keyboard Shortcuts
 
-| Shortcut | Action        |
-| -------- | ------------- |
-| `Ctrl+S` | Download Note |
-| `Ctrl+O` | Open File     |
+| Shortcut       | Action        |
+| -------------- | ------------- |
+| `Ctrl+S`       | Download Note |
+| `Ctrl+O`       | Open File     |
+| `Ctrl+Shift+X` | Clear All     |
+| `Ctrl+Shift+C` | Copy All      |
+| `Ctrl+Shift+V` | Paste All     |
 
 ## 🚀 Tech Stack
 
@@ -34,6 +39,7 @@ A minimalist, high-performance **Open Source** web-based notepad application bui
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com), [DaisyUI 5](https://daisyui.com)
 - **Database**: [Dexie.js](https://dexie.org)
 - **PWA**: [vite-plugin-pwa](https://vite-pwa-org.netlify.app)
+- **AI**: [OpenRouter](https://openrouter.ai) API
 - **Language**: TypeScript
 
 ## 🛠️ Getting Started
@@ -67,12 +73,35 @@ bun build:solid
 | Script          | Description                                                    |
 | --------------- | -------------------------------------------------------------- |
 | `dev`           | Runs the app in development mode at `localhost:3000`.          |
+| `dev:vercel`    | Runs the app with Vercel CLI (required for API/serverless).    |
 | `build:solid`   | Compiles TypeScript and builds the production bundle via Vite. |
 | `deploy:vercel` | Deploys the production build to Vercel.                        |
+| `env:pull`      | Pulls environment variables from Vercel project.               |
 | `typecheck`     | Runs TypeScript type checking.                                 |
 | `preview`       | Previews the production build locally.                         |
 | `lint`          | Runs ESLint.                                                   |
 | `format`        | Formats code using Prettier.                                   |
+| `prepare`       | Sets up Husky for git hooks.                                   |
+
+## 🔑 Environment Variables
+
+To use the AI features, you must configure the following environment variables.
+
+1. Copy the example environment file (if available) or create a `.env.local` file in the root directory:
+
+```bash
+touch .env.local
+```
+
+2. Add the following keys:
+
+```env
+# OpenRouter API Key for AI features
+OPENROUTER_API_KEY=your_api_key_here
+
+# Recommended Model (e.g., google/gemini-2.0-flash-exp:free)
+OPENROUTER_MODEL=google/gemini-2.0-flash-exp:free
+```
 
 ## 🌐 Deployment
 

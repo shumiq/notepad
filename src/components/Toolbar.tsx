@@ -9,6 +9,10 @@ interface ToolbarProps {
   onOpen: () => void;
   onDownload: () => void;
   onAI: () => void;
+  onSelectAll: () => void;
+  onClear: () => void;
+  onCopy: () => void;
+  onPaste: () => void;
 }
 
 export function Toolbar(props: ToolbarProps) {
@@ -33,6 +37,19 @@ export function Toolbar(props: ToolbarProps) {
       </button>
       <button class="btn btn-md btn-square" onclick={props.onAI}>
         <Icon name="wand_shine" />
+      </button>
+      <div class="bg-base-content/20 mx-1 h-6 w-px"></div>
+      <button class="btn btn-md btn-square" onclick={props.onSelectAll}>
+        <Icon name="select_all" />
+      </button>
+      <button class="btn btn-md btn-square" onclick={props.onClear}>
+        <Icon name="delete" />
+      </button>
+      <button class="btn btn-md btn-square" onclick={props.onCopy}>
+        <Icon name="content_copy" />
+      </button>
+      <button class="btn btn-md btn-square" onclick={props.onPaste}>
+        <Icon name="content_paste" />
       </button>
       <div class="ml-auto">
         <ThemeController />

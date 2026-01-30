@@ -3,6 +3,7 @@ import type { Accessor } from "solid-js";
 interface EditorProps {
   content: Accessor<string>;
   onContentInput: (val: string) => void;
+  ref?: (el: HTMLTextAreaElement) => void;
 }
 
 export function Editor(props: EditorProps) {
@@ -25,7 +26,10 @@ export function Editor(props: EditorProps) {
           </div>
         </div>
         <textarea
-          ref={textareaRef}
+          ref={(el) => {
+            textareaRef = el;
+            if (props.ref) props.ref(el);
+          }}
           class="m-0 h-full flex-1 resize-none overflow-x-auto border-none bg-transparent p-2 font-mono text-[13px] leading-[1.5rem] whitespace-pre focus:outline-none"
           autofocus
           value={props.content()}
