@@ -8,6 +8,7 @@ interface ToolbarProps {
   onRefresh: () => void;
   onOpen: () => void;
   onDownload: () => void;
+  onAI: () => void;
 }
 
 export function Toolbar(props: ToolbarProps) {
@@ -29,6 +30,9 @@ export function Toolbar(props: ToolbarProps) {
       </button>
       <button class="btn btn-md btn-square" onclick={props.onDownload}>
         <Icon name="download" />
+      </button>
+      <button class="btn btn-md btn-square" onclick={props.onAI}>
+        <Icon name="wand_shine" />
       </button>
       <div class="ml-auto">
         <ThemeController />
