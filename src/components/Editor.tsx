@@ -14,7 +14,7 @@ export function Editor(props: EditorProps) {
     <div class="flex-1 overflow-hidden">
       <div class="flex h-full w-full">
         <div
-          ref={lineNumbersRef}
+          ref={(el) => (lineNumbersRef = el)}
           class="bg-base-200 text-base-content/40 w-10 overflow-hidden py-2 text-right font-mono text-[13px] select-none"
         >
           <div class="flex flex-col pr-2">

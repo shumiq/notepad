@@ -23,16 +23,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Send prompt to OpenRouter
     const completion = await openrouter.chat.send({
-      model: process.env.OPENROUTER_MODEL,
-      messages: [
-        {
-          role: "user",
-          content: `You are a precise text-processing engine. Your task is to refine the provided paragraph based on the user's instructions. Return only the refined text. Do not include greetings, explanations, or any introductory/concluding remarks.
+      chatGenerationParams: {
+        model: process.env.OPENROUTER_MODEL,
+        messages: [
+          {
+            role: "user",
+            content: `You are a precise text-processing engine. Your task is to refine the provided paragraph based on the user's instructions. Return only the refined text. Do not include greetings, explanations, or any introductory/concluding remarks.
 
   ${prompt}`,
-        },
-      ],
-      stream: false,
+          },
+        ],
+        stream: false,
+      },
     });
 
     const output = completion.choices[0]?.message?.content ?? "";
