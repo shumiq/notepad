@@ -33,15 +33,15 @@
     ]
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.0",
     "dexie": "^4.3.0",
     "solid-js": "^1.9.11"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@openrouter/sdk": "^0.8.0",
-    "@types/node": "^25.2.3",
-    "@vercel/node": "^5.6.4",
+    "@types/node": "^25.3.0",
+    "@vercel/node": "^5.6.5",
     "autoprefixer": "^10.4.24",
     "daisyui": "^5.5.18",
     "eslint": "^10.0.0",
@@ -51,10 +51,10 @@
     "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.0",
-    "vercel": "^50.18.2",
+    "vercel": "^50.19.1",
     "vite": "^7.3.1",
     "vite-plugin-pwa": "^1.2.0",
     "vite-plugin-solid": "^2.11.10"
