@@ -42,7 +42,7 @@
     "@openrouter/sdk": "^0.9.11",
     "@types/node": "^25.3.0",
     "@vercel/node": "^5.6.7",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "daisyui": "^5.5.19",
     "eslint": "^10.0.2",
     "globals": "^17.3.0",
