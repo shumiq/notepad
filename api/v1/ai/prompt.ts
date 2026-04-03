@@ -23,7 +23,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Send prompt to OpenRouter
     const completion = await openrouter.chat.send({
-      chatGenerationParams: {
+      chatRequest: {
         model: process.env.OPENROUTER_MODEL,
         messages: [
           {
