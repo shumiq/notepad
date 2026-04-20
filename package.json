@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@openrouter/sdk": "^0.12.15",
+    "@openrouter/sdk": "^0.12.16",
     "@types/node": "^25.6.0",
     "@vercel/node": "^5.7.11",
     "autoprefixer": "^10.5.0",

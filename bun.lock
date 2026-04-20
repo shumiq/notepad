@@ -11,7 +11,7 @@
       },
       "devDependencies": {
         "@eslint/js": "^10.0.1",
-        "@openrouter/sdk": "^0.12.15",
+        "@openrouter/sdk": "^0.12.16",
         "@types/node": "^25.6.0",
         "@vercel/node": "^5.7.11",
         "autoprefixer": "^10.5.0",
@@ -344,7 +344,7 @@
 
     "@nodelib/fs.walk": ["@nodelib/fs.walk@1.2.8", "", { "dependencies": { "@nodelib/fs.scandir": "2.1.5", "fastq": "^1.6.0" } }, "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg=="],
 
-    "@openrouter/sdk": ["@openrouter/sdk@0.12.15", "", { "dependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-zbUtDH/SqrNZrkNIdPTwSzZVlPRZJ0JO8k+D+gdQAE5tHrRXRL+W6BrAe78jFz+7ThmImIBQ3afBvzHhrE7ZsQ=="],
+    "@openrouter/sdk": ["@openrouter/sdk@0.12.16", "", { "dependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-O4DJU49NGl12nITT6bvVaIP5vE/2p8PIhQPVNic8iRpbZZHaugChp6R5OBfCxTJEwqLh60ArrdFvlDLcgct/Aw=="],
 
     "@oxc-project/types": ["@oxc-project/types@0.124.0", "", {}, "sha512-VBFWMTBvHxS11Z5Lvlr3IWgrwhMTXV+Md+EQF0Xf60+wAdsGFTBx7X7K/hP4pi8N7dcm1RvcHwDxZ16Qx8keUg=="],
 
