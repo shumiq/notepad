@@ -40,8 +40,8 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@openrouter/sdk": "^0.12.35",
-    "@types/node": "^25.6.2",
-    "@vercel/node": "^5.7.17",
+    "@types/node": "^25.7.0",
+    "@vercel/node": "^5.8.0",
     "autoprefixer": "^10.5.0",
     "daisyui": "^5.5.19",
     "eslint": "^10.3.0",
@@ -53,9 +53,9 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3",
-    "typescript-eslint": "^8.59.2",
-    "vercel": "^53.3.2",
-    "vite": "^8.0.11",
+    "typescript-eslint": "^8.59.3",
+    "vercel": "^53.4.0",
+    "vite": "^8.0.12",
     "vite-plugin-pwa": "^1.3.0",
     "vite-plugin-solid": "^2.11.12"
   }
