@@ -54,8 +54,8 @@
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.59.4",
-    "vercel": "^54.2.0",
-    "vite": "^8.0.13",
+    "vercel": "^54.3.0",
+    "vite": "^8.0.14",
     "vite-plugin-pwa": "^1.3.0",
     "vite-plugin-solid": "^2.11.12"
   }
